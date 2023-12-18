@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import All from './components/Todo';
+
 import './App.css';
 
 function App() {
@@ -29,19 +31,7 @@ function App() {
 
     <div className="all-list">
       {all.map((all) => (
-        // eslint-disable-next-line react/jsx-key
-        <div className="all">
-          <div className="content">
-            <p>{all.text}</p>
-            <p className="category">
-              ({all.category})
-            </p>
-          </div>
-          <div>
-            <button>Completar</button>
-            <button>x</button>
-          </div>
-        </div>
+        <All all={all} />
       ))}
     </div>
   </div>;
