@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { useState } from 'react'
 
 import Todo from './components/Todo';
