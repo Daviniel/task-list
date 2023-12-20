@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
-import All from './components/Todo';
+import All from './components/All';
+import AllForm from './components/AllForm';
+
 
 import './App.css';
 
@@ -34,6 +36,7 @@ function App() {
         <All all={all} />
       ))}
     </div>
+    <AllForm />
   </div>;
 }
 
