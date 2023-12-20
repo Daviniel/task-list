@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-import All from './components/All';
-import AllForm from './components/AllForm';
+import Todo from './components/Todo';
+import TodoForm from './components/TodoForm';
 
 
 import './App.css';
 
 function App() {
-  const [all, setAll] = useState([
+  const [todo, setTodo] = useState([
     {
       id:1,
       text: "criar funcionalidade x no sistema",
@@ -28,16 +28,18 @@ function App() {
     }
   ])
 
-  return <div className='app'>
-    <h1>Lista de Tarefas</h1>
+  return (
+    <div className='app'>
+      <h1>Lista de Tarefas</h1>
 
-    <div className="all-list">
-      {all.map((all) => (
-        <All all={all} />
-      ))}
+      <div className="all-list">
+        {todo.map((todo) => (
+          <Todo todo={todo} />
+        ))}
+      </div>
+      <TodoForm />
     </div>
-    <AllForm />
-  </div>;
+  );
 }
 
 export default App
