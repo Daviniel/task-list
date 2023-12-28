@@ -8,7 +8,7 @@ import TodoForm from './components/TodoForm';
 import './App.css';
 
 function App() {
-  const [todo, setTodo] = useState([
+  const [todo, setTodos] = useState([
     {
       id:1,
       text: "criar funcionalidade x no sistema",
@@ -29,16 +29,30 @@ function App() {
     }
   ])
 
+  const addTodo = (text, category) => {
+    
+    const newTodos = [...todo, 
+      {
+        id: Math.floor(Math.random() * 10000),
+        text,
+        category,
+        inCompleted: false,
+      },
+    ];
+    
+    setTodos(newTodos);
+  };
+
   return (
     <div className='app'>
       <h1>Lista de Tarefas</h1>
 
       <div className="all-list">
         {todo.map((todo) => (
-          <Todo todo={todo} />
+          <Todo key={todo.id} todo={todo} />
         ))}
       </div>
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
     </div>
   );
 }
